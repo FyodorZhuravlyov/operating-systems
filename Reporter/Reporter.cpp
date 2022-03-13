@@ -12,10 +12,10 @@ struct employee
 int main(int argc, char* argv[])
 {
 
-    std::ifstream in(argv[0], std::ios::binary);
-    std::ofstream out(argv[1]);
+    std::ifstream in(argv[1], std::ios::binary);
+    std::ofstream out(argv[2]);
     out << argv[0] << std::endl;
-    double sel = atof(argv[2]);
+    double sel = atof(argv[3]);
     employee emp;
     while (in.read((char*)&emp, sizeof(employee)))
     {
