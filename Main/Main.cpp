@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
     }
     std::cout << std::endl;
     in.close();
-    // now Reporter
+
     std::cout << "report file name ";
     std::cin >> report_file;
     std::cout << "salary per hour ";
@@ -62,29 +62,11 @@ int main(int argc, char* argv[])
     WaitForSingleObject(piApp2.hProcess, INFINITE);
     CloseHandle(piApp2.hThread);
     CloseHandle(piApp2.hProcess);
-   
     
     in.open(report_file);
     while (getline(in, result))
     {
         std::cout << result << std::endl;
     }
-
-
-
-
     return 0;
 }
-
-
-//const char* lpszAppName = "ConsoleProcess.exe";
-//std::string arguments = binary_file + " " + std::to_string(number_of_entries);
-//STARTUPINFO si;
-//PROCESS_INFORMATION piApp;
-//ZeroMemory(&si, sizeof(STARTUPINFO));
-//si.cb = sizeof(STARTUPINFO);
-//// создаем новый консольный процесс
-////в криэйт процесс 0 а на второе место аргумнты
-//CreateProcess((LPCWSTR)lpszAppName, (LPWSTR)(char*)arguments.c_str(), NULL, NULL, FALSE,
-//    CREATE_NEW_CONSOLE, NULL, NULL, &si, &piApp);
-
