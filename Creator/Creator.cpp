@@ -12,8 +12,8 @@ struct employee
 int main(int argc, char* argv[])
 {
 
-    std::fstream out(argv[0], std::ios::out | std::ios::binary);
-    int number = atoi(argv[1]);
+    std::fstream out(argv[1], std::ios::out | std::ios::binary);
+    int number = atoi(argv[2]);
 
     for (int i = 0; i < number; i++)
     {
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
         std::cout << " input number of employee = " << std::endl;
         std::cin >> emp.num;
         std::cout << " input employee name = " << std::endl;
-        std::cin.getline(emp.name, 10);
+        std::cin >> emp.name;
         std::cout << " input hours = " << std::endl;
         std::cin >> emp.hours;
         out.write((char*)&emp, sizeof(employee));
